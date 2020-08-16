@@ -14,7 +14,7 @@ class TmdbError: NSObject, Codable {
     var success: Bool?
 
     init(statusMessage: String) {
-        self.statusCode = 500
+        self.statusCode = 0
         self.statusMessage = statusMessage
         self.success = false
         super.init()
