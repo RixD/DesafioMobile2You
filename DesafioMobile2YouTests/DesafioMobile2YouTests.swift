@@ -11,23 +11,52 @@ import XCTest
 
 class DesafioMobile2YouTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    /// Testing live api call
+    func testLiveCallSimilarMovies() {
+        let expectation = XCTestExpectation(description: "Get similar movies")
+        let movieId = 27205
+        
+        let similarMoviesProvider = TmdbMovieProvider.getSimilarMovies(movieId: movieId)
+        
+        let request = TmdbRequest(with: similarMoviesProvider)
+        
+        // API Success test
+        request.fetchResources() { (result: Result<SimilarMoviesResult>) in
+            switch result {
+            case .success(let similarMoviesResult):
+                XCTAssertGreaterThanOrEqual(similarMoviesResult.results!.count, 0)
+                expectation.fulfill()
+                
+            case .error(let error):
+                XCTFail("FetchSimilarMovies: \(error.statusMessage)")
+                expectation.fulfill()
+            }
+        }
+        
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        // API Failure test
+        let expectation2 = XCTestExpectation(description: "Invalid movie id")
+        let invalidMovieId = 0
+        
+        let invalidSimilarMoviesProvider = TmdbMovieProvider.getSimilarMovies(movieId: invalidMovieId)
+        
+        let invalidSimilarMoviesRequest = TmdbRequest(with: invalidSimilarMoviesProvider)
+        
+        // API Success test
+        invalidSimilarMoviesRequest.fetchResources() { (result: Result<SimilarMoviesResult>) in
+            switch result {
+            case .success(let similarMoviesResult):
+                XCTFail("FetchInvalidSimilarMovies: loaded response with invalid id")
+                expectation.fulfill()
+                
+                XCTAssertNil(similarMoviesResult.results)
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+                expectation2.fulfill()
+            case .error(let error):
+                XCTAssertEqual(error.statusCode!, 500)
+                expectation.fulfill()
+            }
         }
     }
 
