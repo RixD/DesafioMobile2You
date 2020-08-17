@@ -11,6 +11,34 @@ import XCTest
 
 class DesafioMobile2YouTests: XCTestCase {
 
+    /// Testing fetching the main movie details
+    func testMainMovieCall() {
+        let movieId = 27205
+        
+        let expectation = XCTestExpectation(description: "Get popular movies from json")
+
+        let movieDetailsProvider = TmdbMovieProvider.getMovieDetails​(movieId: movieId)
+        
+        let request = TmdbRequest(with: movieDetailsProvider)
+            
+        request.fetchResources() { (result: Result<Movie>) in
+            switch result {
+            case .success(let movieDetails):
+                
+                XCTAssertEqual(movieDetails.id, 27205)
+                XCTAssertEqual(movieDetails.originalTitle, "Inception")
+                XCTAssertEqual(movieDetails.posterPath, "/o1SB1gHCmEEURs8P6dfmSC9O3iu.jpg")
+                XCTAssertNotNil(movieDetails.genres)
+                
+                expectation.fulfill()
+                
+            case .error(let error):
+                XCTFail("getMovieDetails​: Failed to load the proper movie with the specific id")
+                expectation.fulfill()
+            }
+        }        
+    }
+    
     /// Testing live api call
     func testLiveCallSimilarMovies() {
         let expectation = XCTestExpectation(description: "Get similar movies")
