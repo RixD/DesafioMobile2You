@@ -16,6 +16,10 @@
 		816F8F1824EA1E4C008EFE5D /* UIButton-ErrorAlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F1724EA1E4C008EFE5D /* UIButton-ErrorAlertButton.swift */; };
 		816F8F1A24EA2126008EFE5D /* UIView-AddSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F1924EA2126008EFE5D /* UIView-AddSubView.swift */; };
 		816F8F1C24EA239C008EFE5D /* UIViewController-Presentations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F1B24EA239C008EFE5D /* UIViewController-Presentations.swift */; };
+		816F8F1F24EA2606008EFE5D /* UITableView-Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F1E24EA2606008EFE5D /* UITableView-Util.swift */; };
+		816F8F2124EA2658008EFE5D /* String-formatedDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F2024EA2658008EFE5D /* String-formatedDateString.swift */; };
+		816F8F2324EA2676008EFE5D /* UIImageView-MoviePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F2224EA2676008EFE5D /* UIImageView-MoviePoster.swift */; };
+		816F8F2624EA269B008EFE5D /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F2524EA269B008EFE5D /* CacheManager.swift */; };
 		81EE29AC24E9049F00BF80F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE29AB24E9049F00BF80F9 /* AppDelegate.swift */; };
 		81EE29AE24E9049F00BF80F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE29AD24E9049F00BF80F9 /* SceneDelegate.swift */; };
 		81EE29B024E9049F00BF80F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE29AF24E9049F00BF80F9 /* ViewController.swift */; };
@@ -65,6 +69,10 @@
 		816F8F1724EA1E4C008EFE5D /* UIButton-ErrorAlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton-ErrorAlertButton.swift"; sourceTree = "<group>"; };
 		816F8F1924EA2126008EFE5D /* UIView-AddSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-AddSubView.swift"; sourceTree = "<group>"; };
 		816F8F1B24EA239C008EFE5D /* UIViewController-Presentations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Presentations.swift"; sourceTree = "<group>"; };
+		816F8F1E24EA2606008EFE5D /* UITableView-Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView-Util.swift"; sourceTree = "<group>"; };
+		816F8F2024EA2658008EFE5D /* String-formatedDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-formatedDateString.swift"; sourceTree = "<group>"; };
+		816F8F2224EA2676008EFE5D /* UIImageView-MoviePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView-MoviePoster.swift"; sourceTree = "<group>"; };
+		816F8F2524EA269B008EFE5D /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		81EE29A824E9049F00BF80F9 /* DesafioMobile2You.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioMobile2You.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EE29AB24E9049F00BF80F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81EE29AD24E9049F00BF80F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,8 +158,25 @@
 			isa = PBXGroup;
 			children = (
 				816F8F0F24EA19EE008EFE5D /* ErrorAlertViewController.swift */,
+				816F8F1D24EA2567008EFE5D /* ViewControllers */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		816F8F1D24EA2567008EFE5D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81EE29AF24E9049F00BF80F9 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		816F8F2424EA2690008EFE5D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				816F8F2524EA269B008EFE5D /* CacheManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		81EE299F24E9049F00BF80F9 = {
@@ -177,6 +202,7 @@
 		81EE29AA24E9049F00BF80F9 /* DesafioMobile2You */ = {
 			isa = PBXGroup;
 			children = (
+				816F8F2424EA2690008EFE5D /* Managers */,
 				816F8F0E24EA1956008EFE5D /* Custom Views */,
 				816F8F0D24EA1946008EFE5D /* Storyboard */,
 				816F8F0C24EA18F3008EFE5D /* Support */,
@@ -186,7 +212,6 @@
 				81EE29E524E90EE200BF80F9 /* Protocols */,
 				81EE29AD24E9049F00BF80F9 /* SceneDelegate.swift */,
 				81EE29E224E90DDC00BF80F9 /* Resources */,
-				81EE29AF24E9049F00BF80F9 /* ViewController.swift */,
 				81EE29DB24E9092100BF80F9 /* TmdbApi */,
 				81EE29B924E904A000BF80F9 /* Info.plist */,
 			);
@@ -248,6 +273,9 @@
 				816F8F1B24EA239C008EFE5D /* UIViewController-Presentations.swift */,
 				816F8F1924EA2126008EFE5D /* UIView-AddSubView.swift */,
 				816F8F1724EA1E4C008EFE5D /* UIButton-ErrorAlertButton.swift */,
+				816F8F1E24EA2606008EFE5D /* UITableView-Util.swift */,
+				816F8F2024EA2658008EFE5D /* String-formatedDateString.swift */,
+				816F8F2224EA2676008EFE5D /* UIImageView-MoviePoster.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -395,11 +423,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				816F8F1C24EA239C008EFE5D /* UIViewController-Presentations.swift in Sources */,
+				816F8F1F24EA2606008EFE5D /* UITableView-Util.swift in Sources */,
 				81EE29DD24E9093F00BF80F9 /* TmdbConfig.swift in Sources */,
 				816F8F1A24EA2126008EFE5D /* UIView-AddSubView.swift in Sources */,
 				81EE29B024E9049F00BF80F9 /* ViewController.swift in Sources */,
 				81EE29EE24E9106900BF80F9 /* URLSession.swift in Sources */,
 				81EE29F724E911E400BF80F9 /* GenreList.swift in Sources */,
+				816F8F2324EA2676008EFE5D /* UIImageView-MoviePoster.swift in Sources */,
 				81EE29E924E90F0C00BF80F9 /* TmdbError.swift in Sources */,
 				81EE29AC24E9049F00BF80F9 /* AppDelegate.swift in Sources */,
 				816F8F1424EA1C2B008EFE5D /* UILabel-ErrorAlertLabels.swift in Sources */,
@@ -412,12 +442,14 @@
 				81EE29F524E911CC00BF80F9 /* Genres.swift in Sources */,
 				816F8F1224EA1AFF008EFE5D /* UIView-ErrorAlertContainerView.swift in Sources */,
 				816F8F1024EA19EE008EFE5D /* ErrorAlertViewController.swift in Sources */,
+				816F8F2624EA269B008EFE5D /* CacheManager.swift in Sources */,
 				81EE29EB24E90FF100BF80F9 /* TmdbRequest.swift in Sources */,
 				81EE29E424E90DF800BF80F9 /* LocalizedLanguage.swift in Sources */,
 				81EE29E724E90EF500BF80F9 /* Result.swift in Sources */,
 				816F8F1824EA1E4C008EFE5D /* UIButton-ErrorAlertButton.swift in Sources */,
 				816F8F0B24EA17E9008EFE5D /* GenresViewModel.swift in Sources */,
 				81EE29DF24E90D8C00BF80F9 /* TmdbMovieProvider.swift in Sources */,
+				816F8F2124EA2658008EFE5D /* String-formatedDateString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
