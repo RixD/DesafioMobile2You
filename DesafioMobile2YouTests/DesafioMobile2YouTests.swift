@@ -29,8 +29,6 @@ class DesafioMobile2YouTests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        
-
     }
     
     /// Testing fetching the main movie details
@@ -82,8 +80,6 @@ class DesafioMobile2YouTests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        
-
 
         // API Failure test
         let expectation2 = XCTestExpectation(description: "Invalid movie id")
