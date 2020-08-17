@@ -44,6 +44,17 @@ class MovieTableViewCell: UITableViewCell {
         movieNumberOfLikesButton.isSelected = sender.isSelected
         movieNumberOfLikes = sender.isSelected ? movieNumberOfLikes + 1 : movieNumberOfLikes - 1
         movieLikes.text = "\(movieNumberOfLikes) Likes"
+        
+        let springTimingParameters: UITimingCurveProvider = UISpringTimingParameters(dampingRatio: 0.5,initialVelocity: CGVector(dx:0, dy: 0))
+                      
+        let animator = UIViewPropertyAnimator(duration: 0.5, timingParameters: springTimingParameters)
+        sender.transform = CGAffineTransform(scaleX: 1.2, y: 0.8)
+        
+        animator.addAnimations {
+            sender.transform = .identity
+        }
+                              
+        animator.startAnimation()
     }
     
 }
