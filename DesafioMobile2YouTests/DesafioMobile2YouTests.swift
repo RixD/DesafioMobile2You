@@ -11,11 +11,33 @@ import XCTest
 
 class DesafioMobile2YouTests: XCTestCase {
 
+    /// Testing fetching the Genres list
+    func testGenresListCall() {
+        let expectation = XCTestExpectation(description: "Get the genres list")
+
+        let genresListProvider = TmdbMovieProvider.getGenresList
+        
+        let request = TmdbRequest(with: genresListProvider)
+            
+        request.fetchResources() { (result: Result<GenreList>) in
+            switch result {
+            case .success(let genresList):
+                XCTAssertNotNil(genresList.genres)
+                XCTAssertGreaterThan(genresList.genres!.count, 0)
+            case .error(let _):
+                XCTFail("getGenresList​: Failed to load the genres list")
+                expectation.fulfill()
+            }
+        }
+        
+
+    }
+    
     /// Testing fetching the main movie details
     func testMainMovieCall() {
         let movieId = 27205
         
-        let expectation = XCTestExpectation(description: "Get popular movies from json")
+        let expectation = XCTestExpectation(description: "Get details from a specific movie using the id")
 
         let movieDetailsProvider = TmdbMovieProvider.getMovieDetails​(movieId: movieId)
         
@@ -36,7 +58,7 @@ class DesafioMobile2YouTests: XCTestCase {
                 XCTFail("getMovieDetails​: Failed to load the proper movie with the specific id")
                 expectation.fulfill()
             }
-        }        
+        }
     }
     
     /// Testing live api call
