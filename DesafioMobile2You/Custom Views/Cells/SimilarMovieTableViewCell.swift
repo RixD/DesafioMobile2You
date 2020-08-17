@@ -37,9 +37,21 @@ class SimilarMovieTableViewCell: UITableViewCell {
             }
         }
         
+        let subtitleString = "\(movieReleaseYear) \(genresString)"        
+        let subtitleAttributedString = highlightYearColor(from: subtitleString, with: movieReleaseYear)
         
-        similarMovieSubTitle.text = "\(movieReleaseYear) \(genresString)"
+        similarMovieSubTitle.text = subtitleString
+        similarMovieSubTitle.attributedText = subtitleAttributedString
         
         similarMoviePosterImage.getMoviePosterImage(from: movie.posterPath, with: "w92")
+    }
+    
+    func highlightYearColor(from subTitleText: String, with yearString: String) -> NSMutableAttributedString {
+        var result = NSMutableAttributedString()
+                
+        result = NSMutableAttributedString(string: subTitleText)
+        result.setColorForText(textForAttribute: yearString, withColor: UIColor(hex: "487870"))
+            
+        return result
     }
 }
