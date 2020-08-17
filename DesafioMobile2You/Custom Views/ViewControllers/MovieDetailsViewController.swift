@@ -79,9 +79,9 @@ class MovieDetailsViewController: UIViewController {
                 }
             case .error(let error):
                 if let errorMessage = error.statusMessage {
-                    print(errorMessage)
+                    self.presentErrorAlertOnMainThread(title: "Erro", message: errorMessage, buttonTitle: "Ok")
                 } else {
-                    print("erro")
+                    self.presentErrorAlertOnMainThread(title: "Erro", message: "Ops! Ocorreu algum erro", buttonTitle: "Ok")
                 }
             }
         }
@@ -103,9 +103,9 @@ class MovieDetailsViewController: UIViewController {
                 }
             case .error(let error):
                 if let errorMessage = error.statusMessage {
-                    print(errorMessage)
+                    self.presentErrorAlertOnMainThread(title: "Erro", message: errorMessage, buttonTitle: "Ok")
                 } else {
-                    print("erro")
+                    self.presentErrorAlertOnMainThread(title: "Erro", message: "Ops! Ocorreu algum erro", buttonTitle: "Ok")
                 }
             }
         }
@@ -123,9 +123,9 @@ class MovieDetailsViewController: UIViewController {
                 }
             case .error(let error):
                 if let errorMessage = error.statusMessage {
-                    print(errorMessage)
+                    self.presentErrorAlertOnMainThread(title: "Erro", message: errorMessage, buttonTitle: "Ok")
                 } else {
-                    print("erro")
+                    self.presentErrorAlertOnMainThread(title: "Erro", message: "Ops! Ocorreu algum erro", buttonTitle: "Ok")
                 }
             }
         }

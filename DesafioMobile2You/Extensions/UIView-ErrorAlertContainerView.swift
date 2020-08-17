@@ -11,10 +11,10 @@ import UIKit
 extension UIView {
     static func errorAlertContainer() -> UIView {
         let container = UIView()
-        container.backgroundColor = .gray
+        container.backgroundColor = .black
         container.layer.cornerRadius = 16
         container.layer.borderWidth = 2
-        container.layer.borderColor = UIColor.white.cgColor
+        container.layer.borderColor = UIColor.gray.cgColor
         container.translatesAutoresizingMaskIntoConstraints = false
         
         return container

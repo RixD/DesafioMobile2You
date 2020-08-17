@@ -41,22 +41,22 @@ class TmdbError: NSObject, Codable {
     }
 
     static var defaultModel: TmdbError {
-        return TmdbError(statusMessage: "Connection error")
+        return TmdbError(statusMessage: "Erro de conexão.")
     }
     
     static var FailedRequest: TmdbError {
-        return TmdbError(statusMessage: "Resquest failed. Please, try again later.")
+        return TmdbError(statusMessage: "O pedido falhou. Por favor, tente novamente mais tarde")
     }
     
     static var ServerError: TmdbError {
-        return TmdbError(statusMessage: "Server Error. Please, try again later.")
+        return TmdbError(statusMessage: "Erro no servidor. Por favor, tente novamente mais tarde.")
     }
     
     static var Unauthorized: TmdbError {
-        return TmdbError(statusMessage: "Unauthorized request.")
+        return TmdbError(statusMessage: "Pedido não autorizado.")
     }
     
     static var NotFound: TmdbError {
-        return TmdbError(statusMessage: "Bad request error.")
+        return TmdbError(statusMessage: "Erro de solicitação ruim.")
     }
 }
