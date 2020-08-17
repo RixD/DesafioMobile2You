@@ -20,9 +20,9 @@
 		816F8F2124EA2658008EFE5D /* String-formatedDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F2024EA2658008EFE5D /* String-formatedDateString.swift */; };
 		816F8F2324EA2676008EFE5D /* UIImageView-MoviePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F2224EA2676008EFE5D /* UIImageView-MoviePoster.swift */; };
 		816F8F2624EA269B008EFE5D /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F2524EA269B008EFE5D /* CacheManager.swift */; };
+		816F8F2824EA27F2008EFE5D /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F8F2724EA27F2008EFE5D /* MovieDetailsViewController.swift */; };
 		81EE29AC24E9049F00BF80F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE29AB24E9049F00BF80F9 /* AppDelegate.swift */; };
 		81EE29AE24E9049F00BF80F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE29AD24E9049F00BF80F9 /* SceneDelegate.swift */; };
-		81EE29B024E9049F00BF80F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EE29AF24E9049F00BF80F9 /* ViewController.swift */; };
 		81EE29B324E9049F00BF80F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EE29B124E9049F00BF80F9 /* Main.storyboard */; };
 		81EE29B524E904A000BF80F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81EE29B424E904A000BF80F9 /* Assets.xcassets */; };
 		81EE29B824E904A000BF80F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81EE29B624E904A000BF80F9 /* LaunchScreen.storyboard */; };
@@ -73,10 +73,10 @@
 		816F8F2024EA2658008EFE5D /* String-formatedDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-formatedDateString.swift"; sourceTree = "<group>"; };
 		816F8F2224EA2676008EFE5D /* UIImageView-MoviePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView-MoviePoster.swift"; sourceTree = "<group>"; };
 		816F8F2524EA269B008EFE5D /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		816F8F2724EA27F2008EFE5D /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		81EE29A824E9049F00BF80F9 /* DesafioMobile2You.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioMobile2You.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EE29AB24E9049F00BF80F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81EE29AD24E9049F00BF80F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		81EE29AF24E9049F00BF80F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		81EE29B224E9049F00BF80F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81EE29B424E904A000BF80F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81EE29B724E904A000BF80F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		816F8F1D24EA2567008EFE5D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				81EE29AF24E9049F00BF80F9 /* ViewController.swift */,
+				816F8F2724EA27F2008EFE5D /* MovieDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -426,7 +426,6 @@
 				816F8F1F24EA2606008EFE5D /* UITableView-Util.swift in Sources */,
 				81EE29DD24E9093F00BF80F9 /* TmdbConfig.swift in Sources */,
 				816F8F1A24EA2126008EFE5D /* UIView-AddSubView.swift in Sources */,
-				81EE29B024E9049F00BF80F9 /* ViewController.swift in Sources */,
 				81EE29EE24E9106900BF80F9 /* URLSession.swift in Sources */,
 				81EE29F724E911E400BF80F9 /* GenreList.swift in Sources */,
 				816F8F2324EA2676008EFE5D /* UIImageView-MoviePoster.swift in Sources */,
@@ -440,6 +439,7 @@
 				81EE29F124E9118000BF80F9 /* SimilarMoviesResult.swift in Sources */,
 				81EE29F324E911A100BF80F9 /* Movie.swift in Sources */,
 				81EE29F524E911CC00BF80F9 /* Genres.swift in Sources */,
+				816F8F2824EA27F2008EFE5D /* MovieDetailsViewController.swift in Sources */,
 				816F8F1224EA1AFF008EFE5D /* UIView-ErrorAlertContainerView.swift in Sources */,
 				816F8F1024EA19EE008EFE5D /* ErrorAlertViewController.swift in Sources */,
 				816F8F2624EA269B008EFE5D /* CacheManager.swift in Sources */,
