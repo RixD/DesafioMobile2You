@@ -9,8 +9,7 @@
 import UIKit
 
 class ErrorAlertViewController: UIViewController {
-    
-    
+        
     private lazy var containerView: UIView = .errorAlertContainer()
     
     private lazy var titleLabel: UILabel = .titleLabel(
@@ -29,18 +28,13 @@ class ErrorAlertViewController: UIViewController {
         title: "Ok"
     )
 
-    var alertTitle: String?
-    var message: String?
-    var buttonTitle: String?
-    
     let padding: CGFloat = 20
-    
     
     init(title: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
-        self.alertTitle = title
-        self.message = message
-        self.buttonTitle = buttonTitle
+        titleLabel.text = title
+        messageLabel.text = message
+        actionButton.setTitle(buttonTitle, for: .normal)
     }
     
     
@@ -53,14 +47,10 @@ class ErrorAlertViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         
-        configureContainerView()
-        configureTitleLabel()
-        configureMessageLabel()
-        configureActionButton()
+        configure()
     }
     
-    
-    func configureContainerView() {
+    func configure() {
         view.add(containerView, then: {
             let containerView: UIView = $0
             
@@ -70,48 +60,41 @@ class ErrorAlertViewController: UIViewController {
                 containerView.widthAnchor.constraint(equalToConstant: 280),
                 containerView.heightAnchor.constraint(equalToConstant: 220)
             ])
-        })
-    }
-    
-    
-    func configureTitleLabel() {
-        view.add(titleLabel, then: {
-            let titleLabel: UILabel = $0
             
-            NSLayoutConstraint.activate([
-                titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
-                titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
-                titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-                titleLabel.heightAnchor.constraint(equalToConstant: 28)
-            ])
-        })
-    }
-    
-    func configureMessageLabel() {
-        view.add(messageLabel, then: {
-            let messageLabel: UILabel = $0
-            
-            NSLayoutConstraint.activate([
-                messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-                messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
-                messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-                messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
-            ])
-        })
-    }
-    
-    func configureActionButton() {
-        view.add(actionButton, then: {
-            let actionButton: UIButton = $0
-            
-            actionButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
-            
-            NSLayoutConstraint.activate([
-                actionButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -padding),
-                actionButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
-                actionButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-                actionButton.heightAnchor.constraint(equalToConstant: 44)
-            ])
+            view.add(titleLabel, then: {
+                let titleLabel: UILabel = $0
+                
+                NSLayoutConstraint.activate([
+                    titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
+                    titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+                    titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+                    titleLabel.heightAnchor.constraint(equalToConstant: 28)
+                ])
+                
+                view.add(actionButton, then: {
+                    let actionButton: UIButton = $0
+                    
+                    actionButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
+                    
+                    NSLayoutConstraint.activate([
+                        actionButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -padding),
+                        actionButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+                        actionButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+                        actionButton.heightAnchor.constraint(equalToConstant: 44)
+                    ])
+                    
+                    view.add(messageLabel, then: {
+                        let messageLabel: UILabel = $0
+                        
+                        NSLayoutConstraint.activate([
+                            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+                            messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+                            messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+                            messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
+                        ])
+                    })
+                })
+            })
         })
     }
         
