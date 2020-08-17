@@ -9,10 +9,10 @@
 import UIKit
 
 extension UIImageView {
-    func getMoviePosterImage(from posterPath: String) {
+    func getMoviePosterImage(from posterPath: String, with size: String) {
         let cache = CacheManager.shared.cache
         
-        let moviePosterImageProvider = TmdbMovieProvider.getMoviePosterImage(posterPath: posterPath)
+        let moviePosterImageProvider = TmdbMovieProvider.getMoviePosterImage(posterPath: posterPath, size: size)
         
         let cacheKey = NSString(string: posterPath)
         

@@ -12,7 +12,7 @@ enum TmdbMovieProvider {
     case getSimilarMovies(movieId: Int)
     case getMovieDetails​(movieId: Int)
     case getGenresList
-    case getMoviePosterImage(posterPath: String)
+    case getMoviePosterImage(posterPath: String, size: String)
 }
 
 extension TmdbMovieProvider: Endpoint {
@@ -58,8 +58,10 @@ extension TmdbMovieProvider: Endpoint {
             return "/\(version)/movie/\(movieId)"
         case .getGenresList:
             return "/\(version)/genre/movie/list"
-        case .getMoviePosterImage(let posterPath):
-            return "/t/p/w92\(posterPath)"
+        case .getMoviePosterImage(let posterPath, let size):
+            return "/t/p/\(size)\(posterPath)"
         }
     }
 }
+
+

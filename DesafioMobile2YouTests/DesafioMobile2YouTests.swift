@@ -24,7 +24,7 @@ class DesafioMobile2YouTests: XCTestCase {
             case .success(let genresList):
                 XCTAssertNotNil(genresList.genres)
                 XCTAssertGreaterThan(genresList.genres!.count, 0)
-            case .error(let _):
+            case .error( _):
                 XCTFail("getGenresList​: Failed to load the genres list")
                 expectation.fulfill()
             }
@@ -52,7 +52,7 @@ class DesafioMobile2YouTests: XCTestCase {
                 
                 expectation.fulfill()
                 
-            case .error(let error):
+            case .error( _):
                 XCTFail("getMovieDetails​: Failed to load the proper movie with the specific id")
                 expectation.fulfill()
             }
@@ -76,7 +76,7 @@ class DesafioMobile2YouTests: XCTestCase {
                 expectation.fulfill()
                 
             case .error(let error):
-                XCTFail("FetchSimilarMovies: \(error.statusMessage)")
+                XCTFail("FetchSimilarMovies: \(error.statusMessage ?? "Error trying to FetchSimilarMovies")")
                 expectation.fulfill()
             }
         }
