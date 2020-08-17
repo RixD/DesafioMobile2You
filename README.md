@@ -27,6 +27,10 @@ A single view App that replicates the layout and functionalities from TodoMovies
 <img alt="iPhone Home Screen" src="docs/Mobile2you_home.png?raw=true" width=290 /> <img alt="iPhone Home Screen scrolled" src="docs/Mobile2you_home_2.png?raw=true" width=290 />
 
 
+### Tests
+
+Written test case for Tmdb Api calls
+
 ## TO DO
 Below is a list with some suggested features:
 
